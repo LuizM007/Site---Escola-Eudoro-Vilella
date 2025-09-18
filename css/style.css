@@ -1,0 +1,220 @@
+/* Paleta de Cores e Estilos Globais */
+:root {
+  /* Cores de Fundo (extraídas e aprimoradas para profundidade) */
+  --color-bg-primary: #2A2542; /* Azul escuro do texto do logo. Solidez e Profundidade. */
+  --color-bg-secondary: #3C3757; /* Variação mais clara do azul escuro para cards e seções. */
+
+  /* Cores de Texto (para máxima legibilidade e harmonia) */
+  --color-text-primary: #EEF6F8; /* Branco Suave. Altíssimo contraste em fundos escuros. */
+  --color-text-secondary: #C8D6DC; /* Cinza azulado claro para textos de apoio. */
+
+  /* Cores de Destaque (extraídas diretamente da fita do logo) */
+  --color-accent-main: #2A8C90; /* Verde-Água. Principal cor de destaque. */
+  --color-accent-secondary: #EDD29C; /* Amarelo-Mostarda. Destaque secundário e de interação. */
+  --color-accent-emphasis: #A36173; /* Rosa/Carmesim. Cor para ênfase emocional e destaque. */
+  
+  /* Gradientes (refletem o movimento orgânico do logo) */
+  --gradient-flow-1: linear-gradient(135deg, var(--color-accent-main) 0%, var(--color-accent-secondary) 100%);
+  --gradient-flow-2: linear-gradient(135deg, var(--color-accent-emphasis) 0%, var(--color-accent-main) 100%);
+  --gradient-flow-bg: linear-gradient(135deg, var(--color-bg-primary) 0%, var(--color-bg-secondary) 100%);
+
+  /* Sombra e Tipografia */
+  --shadow-subtle: rgba(0, 0, 0, 0.3);
+  --font-main: 'Montserrat', sans-serif;
+}
+
+/* Aplicação dos Estilos */
+
+body {
+  font-family: var(--font-main);
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+  overflow-x: hidden;
+  transition: background-color 0.3s ease;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var(--color-accent-main);
+}
+
+.masthead h1 {
+  font-size: 3rem;
+  letter-spacing: 3px;
+  color: var(--color-text-primary);
+  animation: slideInFromTop 1s ease-out;
+}
+
+a {
+  color: var(--color-accent-secondary);
+  transition: color 0.3s ease;
+}
+
+a:hover {
+  color: var(--color-text-primary);
+}
+
+#main-navbar {
+  background-color: rgba(42, 37, 66, 0.85);
+  backdrop-filter: blur(8px);
+  box-shadow: none;
+  transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+#main-navbar .navbar-brand {
+  font-weight: 700;
+  color: var(--color-text-primary) !important;
+  transition: color 0.3s ease;
+}
+
+#main-navbar .navbar-brand:hover {
+  color: var(--color-accent-secondary) !important;
+}
+
+#main-navbar .nav-link {
+  color: var(--color-text-secondary) !important;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+#main-navbar .nav-link:hover {
+  color: var(--color-accent-main) !important;
+}
+
+#main-navbar .nav-link.active {
+  color: var(--color-accent-main) !important;
+  font-weight: 700;
+}
+
+.navbar-scrolled {
+  background-color: var(--color-bg-primary) !important;
+  box-shadow: 0 4px 10px var(--shadow-subtle) !important;
+}
+
+.masthead {
+  padding-top: calc(7rem + 72px);
+  padding-bottom: 7rem;
+  text-shadow: 2px 2px 4px var(--shadow-subtle);
+  background: var(--gradient-flow-bg);
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromTop {
+  from { transform: translateY(-50px); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+section {
+  padding: 5rem 0;
+  background-color: var(--color-bg-secondary);
+}
+
+.bg-dark-section {
+  background-color: var(--color-bg-primary);
+}
+
+.map-responsive iframe {
+  width: 100%;
+  height: 300px;
+  border: 0;
+  border-radius: 0.75rem;
+  box-shadow: 0 8px 15px var(--shadow-subtle);
+}
+
+.card {
+  background-color: var(--color-bg-secondary);
+  border: 1px solid var(--color-accent-main);
+  color: var(--color-text-primary);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 15px var(--shadow-subtle);
+}
+
+.card-title {
+  color: var(--color-accent-main);
+}
+
+.carousel-item img {
+  object-fit: cover;
+  height: 400px;
+}
+
+.table {
+  color: var(--color-text-primary);
+  background-color: var(--color-bg-secondary);
+  border-radius: 0.75rem;
+  overflow: hidden;
+}
+
+.table thead th {
+  background-color: var(--color-bg-primary);
+  color: var(--color-accent-main);
+}
+
+.divider-custom .divider-custom-line {
+  width: 100%;
+  max-width: 7rem;
+  height: 0.25rem;
+  background-color: var(--color-text-primary);
+  border-radius: 1rem;
+  opacity: 0.2;
+}
+
+.divider-custom .divider-custom-icon {
+  color: var(--color-accent-secondary);
+  font-size: 2rem;
+  margin: 0 1rem;
+}
+
+.divider-custom {
+  margin: 1.25rem 0 1.5rem;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer {
+  background-color: var(--color-bg-primary);
+  color: var(--color-text-primary);
+}
+
+.footer a {
+  color: var(--color-text-secondary);
+}
+
+.footer a:hover {
+  color: var(--color-accent-secondary);
+}
+
+.js-fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+.js-fade-in.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.text-accent-orange {
+  color: var(--color-accent-secondary) !important;
+}
+
+.text-accent-red {
+  color: var(--color-accent-emphasis) !important;
+}
+
+.imagem  {
+  margin-right:15px;
+}
